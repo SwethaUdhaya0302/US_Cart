@@ -1,0 +1,865 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(
+        180deg,
+        #ffd6e7,
+        #e89ac4,
+        #b878d5
+    );
+    background-attachment:fixed;
+    overflow-x:hidden;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+nav{
+    width:100%;
+    min-height:70px;
+    background:rgba(0,0,0,0.96);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:999;
+
+    padding:0 25px;
+
+    box-shadow:0 3px 15px rgba(0,0,0,0.4);
+}
+
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:white;
+}
+
+.logo span{
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.icon_style{
+    font-size:30px;
+    color:#39ff14;
+}
+
+
+/* SEARCH */
+
+nav input{
+    width:230px;
+    height:38px;
+
+    margin-left:30px;
+
+    border:none;
+    outline:none;
+
+    border-radius:25px;
+
+    padding:0 18px;
+
+    font-size:14px;
+}
+
+
+/* NAV LINKS */
+
+nav ul{
+    list-style:none;
+
+    display:flex;
+    align-items:center;
+
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+
+    font-size:17px;
+
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#39ff14;
+}
+
+
+/* =====================================================
+   CATEGORY BUTTONS
+===================================================== */
+
+.list{
+    padding:95px 30px 15px;
+
+    background:rgba(255,255,255,0.35);
+
+    backdrop-filter:blur(5px);
+}
+
+.list ul{
+    list-style:none;
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+.list button{
+    border:none;
+
+    background:rgba(57,255,20,0.75);
+
+    padding:9px 18px;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.list button:hover{
+    background:#39ff14;
+    transform:translateY(-3px);
+}
+
+.list a{
+    text-decoration:none;
+    color:#111;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   BANNER
+===================================================== */
+
+.container{
+    width:100%;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:30px 0;
+}
+
+.wrapper{
+    width:850px;
+    height:400px;
+
+    margin:auto;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.35);
+}
+
+.holder{
+    display:grid;
+
+    grid-template-columns:repeat(4,100%);
+
+    width:100%;
+    height:100%;
+
+    animation:slider 20s ease-in-out infinite;
+}
+
+#slide_img1,
+#slide_img2,
+#slide_img3,
+#slide_img4{
+    width:100%;
+    height:100%;
+
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+#slide_img1{
+    background-image:url("./images-home/sareebanner.jpeg");
+}
+
+#slide_img2{
+    background-image:url("./images-home/saree2.jfif");
+}
+
+#slide_img3{
+    background-image:url("./images-home/anairkali3.jfif");
+}
+
+#slide_img4{
+    background-image:url("./images-home/sareebanner.jpeg");
+}
+
+
+/* SLIDER DOTS */
+
+.button_holder{
+    position:absolute;
+
+    bottom:45px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+    gap:8px;
+}
+
+.slide{
+    width:13px;
+    height:13px;
+
+    background:white;
+
+    border-radius:50%;
+
+    border:2px solid #39ff14;
+}
+
+
+/* SLIDER */
+
+@keyframes slider{
+
+    0%,20%{
+        transform:translateX(0);
+    }
+
+    25%,45%{
+        transform:translateX(-100%);
+    }
+
+    50%,70%{
+        transform:translateX(-200%);
+    }
+
+    75%,95%{
+        transform:translateX(-300%);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+h2{
+    text-align:center;
+
+    color:white;
+
+    font-size:32px;
+
+    margin:20px 0;
+
+    text-shadow:
+        2px 2px 5px rgba(0,0,0,0.4);
+}
+
+
+/* =====================================================
+   PRODUCT GRID
+===================================================== */
+
+.sarees,
+.kurti{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:25px;
+
+    padding:25px 40px;
+}
+
+
+/* =====================================================
+   PRODUCT CARD
+===================================================== */
+
+.product{
+
+    width:100%;
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    border:2px solid transparent;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.18);
+
+    padding-bottom:15px;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        border-color 0.3s;
+}
+
+
+/* PRODUCT IMAGE */
+
+.product img{
+
+    width:100%;
+
+    height:210px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:transform 0.4s;
+}
+
+
+/* IMAGE HOVER */
+
+.product:hover img{
+    transform:scale(1.07);
+}
+
+
+/* CARD HOVER */
+
+.product:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#39d353;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.3);
+}
+
+
+/* PRODUCT TITLE */
+
+.product h4{
+
+    font-size:17px;
+
+    margin-top:12px;
+
+    color:#222;
+}
+
+
+/* PRODUCT DESCRIPTION */
+
+.product p{
+
+    color:#777;
+
+    font-size:14px;
+
+    margin:4px;
+}
+
+
+/* PRICE */
+
+.product span{
+
+    display:block;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#111;
+
+    margin:8px 0;
+}
+
+
+/* STAR */
+
+.star{
+    color:#f5b301;
+
+    font-size:15x;
+}
+
+
+/* ADD CART */
+
+.product button{
+
+    border:none;
+
+    background:#19b82f;
+
+    color:white;
+
+    padding:9px 22px;
+
+    border-radius:25px;
+
+    margin-top:10px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.product button:hover{
+
+    background:#078a1c;
+
+    transform:scale(1.05);
+}
+
+.product a{
+    color:white;
+
+    text-decoration:none;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    background:#111;
+
+    color:white;
+
+    margin-top:50px;
+
+    padding-top:45px;
+}
+
+.footer-container{
+
+    width:90%;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:30px;
+
+    justify-content:space-between;
+}
+
+.footer-box{
+
+    width:20%;
+}
+
+.footer-box h3{
+
+    color:#39ff14;
+
+    margin-bottom:15px;
+}
+
+.footer-box p{
+
+    color:#bbb;
+
+    line-height:1.7;
+}
+
+.footer-box a{
+
+    display:block;
+
+    color:#bbb;
+
+    text-decoration:none;
+
+    margin-bottom:10px;
+
+    transition:0.3s;
+}
+
+.footer-box a:hover{
+
+    color:#39ff14;
+
+    padding-left:5px;
+}
+
+
+/* SOCIAL */
+
+.social_media{
+
+    width:15%;
+
+    text-align:center;
+}
+
+.social_media h3{
+
+    margin-bottom:15px;
+}
+
+.social_media i{
+
+    font-size:25px;
+
+    margin:8px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.social_media i:hover{
+
+    color:#39ff14;
+
+    transform:scale(1.2);
+}
+
+
+/* FOOTER BOTTOM */
+
+.footer-bottom{
+
+    margin-top:35px;
+
+    padding:18px;
+
+    text-align:center;
+
+    border-top:1px solid #333;
+}
+
+.footer-bottom p{
+
+    color:#888;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media screen and (max-width:1100px){
+
+    nav ul{
+        gap:15px;
+    }
+
+    nav a{
+        font-size:15px;
+    }
+
+    nav input{
+        width:170px;
+        margin-left:15px;
+    }
+
+    .wrapper{
+        width:85%;
+        height:360px;
+    }
+
+    .sarees,
+    .kurti{
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        padding:25px;
+    }
+
+    .footer-box{
+        width:45%;
+    }
+
+    .social_media{
+        width:45%;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media screen and (max-width:768px){
+
+    /* NAVBAR */
+
+    nav{
+
+        position:relative;
+
+        display:block;
+
+        padding:12px;
+
+        text-align:center;
+    }
+
+    .logo{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+    }
+
+    nav input{
+
+        display:block;
+
+        width:90%;
+
+        margin:10px auto;
+    }
+
+    nav ul{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+        gap:12px;
+
+        margin-top:10px;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+
+    /* CATEGORY */
+
+    .list{
+
+        padding:15px;
+
+    }
+
+    .list ul{
+
+        justify-content:center;
+    }
+
+
+    /* BANNER */
+
+    .wrapper{
+
+        width:92%;
+
+        height:280px;
+    }
+
+
+    /* PRODUCTS */
+
+    .sarees,
+    .kurti{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:15px;
+
+        padding:15px;
+    }
+
+    .product img{
+
+        height:180px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-box{
+
+        width:100%;
+    }
+
+    .social_media{
+
+        width:100%;
+
+        text-align:left;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media screen and (max-width:480px){
+
+    nav ul{
+
+        gap:8px;
+    }
+
+    nav a{
+
+        font-size:12px;
+    }
+
+    .icon_style{
+
+        font-size:25px;
+    }
+
+    .wrapper{
+
+        width:94%;
+
+        height:220px;
+    }
+
+    .button_holder{
+
+        bottom:20px;
+    }
+
+    h2{
+
+        font-size:25px;
+    }
+
+    .sarees,
+    .kurti{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:10px;
+
+        padding:10px;
+    }
+
+    .product{
+
+        border-radius:12px;
+    }
+
+    .product img{
+
+        height:140px;
+    }
+
+    .product h4{
+
+        font-size:14px;
+    }
+
+    .product p{
+
+        font-size:12px;
+    }
+
+    .product span{
+
+        font-size:16px;
+    }
+
+    .product button{
+
+        padding:7px 10px;
+
+        font-size:12px;
+    }
+
+    .star{
+
+        font-size:11px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media screen and (max-width:360px){
+
+    .sarees,
+    .kurti{
+
+        grid-template-columns:1fr;
+    }
+
+    .product{
+
+        width:85%;
+
+        margin:auto;
+    }
+
+    .wrapper{
+
+        height:190px;
+    }
+}
